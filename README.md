@@ -44,11 +44,13 @@ Hundreds of Apify crawlers output raw HTML full of nav bars, footers, scripts, a
 - **Pinecone + Qdrant Auto-Upsert** (Enterprise) — generates embeddings via OpenAI `text-embedding-3-small` and upserts vectors directly to your Pinecone index **or** Qdrant collection. No glue code needed. Auto-detects which vector DB to use from your input.
 - **Bulk Processing** — accepts an array of HTML documents and processes each independently with per-record chunk settings.
 - **URL Fetching** — provide an array of URLs; the Actor automatically fetches and processes each one through the full pipeline.
-- **Semantic Chunking** (new in v1.3) — heading-aware chunking that respects document structure. Splits on `#` headings, keeps related content together, preserves heading context in chunk metadata. Auto-selected for content >5000 characters.
+- **Semantic Chunking** (new in v1.4) — heading-aware chunking that respects document structure. Splits on `#` headings, keeps related content together, preserves heading context in chunk metadata. Auto-selected for content >5000 characters.
 - **JSONL Export** — download chunks as JSONL (one JSON object per line) for direct LLM fine-tuning, embedding batch jobs, or LangChain/LlamaIndex ingestion.
 - **Zero DOM dependency** — pure string processing; runs on any Node.js platform without a browser or headless client.
 - **MCP / AI Agent Ready** — callable via API; JSON output integrates directly with LangChain, LlamaIndex, Haystack, or custom RAG pipelines.
 - **Backward Compatible** — Enterprise mode activates only when you provide API keys. Standard mode works exactly as before.
+- **Quality Scoring** — scores chunk quality based on structural coherence, token efficiency, and metadata completeness.
+- **Deduplication** — detects and removes duplicate or near-duplicate chunks across records, reducing embedding storage costs.
 
 ---
 
