@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT">
 </p>
 
-Convert raw HTML/text into **clean Markdown**, split into **token-aware chunks**, auto-embed, and upsert to Pinecone — all in one API call at **$0.01/1k results**.
+Convert raw HTML/text into **clean Markdown**, split into **token-aware chunks**, auto-embed, and upsert to Pinecone **or Qdrant** — all in one API call at **$0.01/1k results**.
 
 ---
 
@@ -26,11 +26,12 @@ Convert raw HTML/text into **clean Markdown**, split into **token-aware chunks**
 | Token-aware chunking (cl100k_base) | -- | Yes |
 | OpenAI Embeddings | -- | Yes |
 | Pinecone auto-upsert | -- | Yes |
+| Qdrant auto-upsert | -- | Yes |
 | Bulk processing | Yes | Yes |
 | Zero DOM, no browser | Yes | Yes |
 | **Price** | **$0.01/1k** | **$0.01/1k** |
 
-Enterprise mode activates automatically when you provide `openaiApiKey` + `pineconeApiKey` + `pineconeIndex`.
+Enterprise mode activates automatically when you provide OpenAI key + (Pinecone keys **or** Qdrant config). Auto-detects which vector DB to use.
 
 ## Quick Start
 
@@ -56,7 +57,7 @@ curl -X POST https://api.apify.com/v2/acts/foxpink~apify-rag-markdown-chunker/ru
 
 ## Pricing
 
-**$0.01 per 1,000 results.** Enterprise mode costs the same — you only pay OpenAI and Pinecone directly.
+**$0.01 per 1,000 results.** Enterprise mode costs the same — you only pay OpenAI and your Vector DB directly.
 
 ---
 
