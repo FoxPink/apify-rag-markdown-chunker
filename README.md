@@ -185,6 +185,32 @@ One result = one processed record (not per chunk). Processing 5 records with 200
 
 ---
 
+## Why FoxPink?
+
+| vs. Competitor | Their Price | Our Price | Advantage |
+|----------------|-------------|-----------|-----------|
+| Unstructured.io API | $10/1k pages | **$0.01/1k** | **1,000x cheaper** |
+| LangChain/LlamaIndex | Open source (self-host) | **$0.01/1k** | **No infra management** |
+| labrat-0/rag-content-chunker | Free (GitHub) | **$0.01/1k** | **Apify-native, no self-host** |
+
+**Unique features they don't have:** `qualityScore` per chunk, `contentHash` (SHA256), `codeBlocks` detection, PDF/DOCX binary parsing, semantic + character dual-mode, enterprise fallback (no API key required).
+
+---
+
+## FoxPink Studio Ecosystem
+
+Combine with other FoxPink actors for a complete data pipeline:
+
+| Actor | Purpose | Price |
+|-------|---------|-------|
+| [Email Enricher+](https://apify.com/foxpink/email-enricher-plus) | Email verification & spam trap detection | $0.01/1k |
+| [Shopify Hidden API Spy](https://apify.com/foxpink/shopify-hidden-api-spy) | Zero-DOM Shopify product intelligence | $0.01/1k |
+| [Odoo Market Intel](https://apify.com/foxpink/odoo-apps-market-intelligence) | Odoo Apps Store scraper & analysis | $0.05/1k |
+
+**Workflow example:** RAG chunk product descriptions → store in Pinecone → semantic search for customer queries.
+
+---
+
 ## Compatibility
 
 - 100% Node.js (18+)
